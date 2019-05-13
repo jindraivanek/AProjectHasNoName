@@ -1,3 +1,4 @@
+#r "paket: groupref build //"
 #load ".fake/build.fsx/intellisense.fsx"
 
 open System.Diagnostics
@@ -8,6 +9,7 @@ open Fake.Core
 open Fake.DotNet
 open Fake.Core.TargetOperators
 open Fake.IO.Globbing.Operators
+open Fake.DotNet.NuGet
 
 // Helpers and settings that figure themselves out
 let projectsPattern = "src/**/*.fsproj"
@@ -15,7 +17,7 @@ let testProjectsPattern = "src/**/*Tests.fsproj"
 
 let srcProjects = !! projectsPattern -- testProjectsPattern
 let testProjects = !! testProjectsPattern
-let installDotNet = lazy DotNet.install DotNet.Release_2_1_4
+let installDotNet = lazy DotNet.install DotNet.Versions.Release_2_1_402
 
 // Read additional information from the release notes document
 let releaseNotes = File.ReadAllLines "RELEASE_NOTES.md"

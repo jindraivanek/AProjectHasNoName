@@ -6,15 +6,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <DotNetCliToolReference Include="dotnet-fake" Version="5.0.0-*" />
+    <DotNetCliToolReference Include="dotnet-fake" Version="5.*" />
   </ItemGroup>
 
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
 
   <PropertyGroup>
     <RepoRootDir>$([System.IO.Path]::GetFullPath("$(MSBuildThisFileDirectory)"))</RepoRootDir>
-    <BuildDependsOn></BuildDependsOn>
-    <CoreBuildDependsOn></CoreBuildDependsOn>
+    <BuildDependsOn/>
+    <CoreBuildDependsOn/>
   </PropertyGroup>
 
   <Target Name="Build">

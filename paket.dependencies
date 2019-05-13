@@ -11,11 +11,12 @@ nuget Argu
 
 github Microsoft/visualfsharp:Visual-Studio-2017-Version-15.4 src/fsharp/FSharp.Build/Fsc.fs
 
-// [ FAKE GROUP ]
 group Build
-  source https://www.nuget.org/api/v2/
+  storage: none
+  source https://api.nuget.org/v3/index.json
 
-  nuget Fake.Core.Target prerelease
-  nuget Fake.DotNet.Cli prerelease
-  nuget Fake.Core.ReleaseNotes prerelease
-  nuget Fake.Core.Xml prerelease
+  nuget Fake.Core.Target
+  nuget Fake.DotNet.Cli
+  nuget Fake.Core.ReleaseNotes
+  nuget Fake.Core.Xml
+  nuget Fake.DotNet.Nuget
